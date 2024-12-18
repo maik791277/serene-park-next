@@ -19,7 +19,7 @@ export default function Home() {
             <p className="text-center text-[18px] tracking-[2px] pt-[10px] pb-[22px] text-white text-secondary uppercase box-border px-5 sm:text-[22px]">Россия,
               г. Калининград, ул. Аллея Смелых 187</p>
             <h1 className="text-center m-0 py-6 text-[40px] leading-[1.1] tracking-[1px] text-white font-semibold sm:text-7xl">
-              Гостиница <span className="whitespace-nowrap">"Парк Отель"</span>
+              Гостиница <span className="whitespace-nowrap">&quot;Парк Отель&quot;</span>
             </h1>
             <div className="flex gap-5 max-w-[500px] w-full mt-[50px]  box-border px-5">
               <UiLink href="/rooms" size="large">
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
           <div className=" w-full box-content xl:pl-24 lg:max-w-[550px]">
             <div className="mx-5">
-              <h2 className="uppercase text-[40px] text-black leading-[1.23] font-semibold">"Парк Отель"</h2>
+              <h2 className="uppercase text-[40px] text-black leading-[1.23] font-semibold">&quot;Парк Отель&quot;</h2>
               <p className="mt-[34px] text-black text-[20px] leading-[1.55] font-light">Городской отель «Парк Отель»
                 отличный выбор для тех, кто ищет уютное и комфортное проживание.
                 Наш отель расположен в новом здании спального района, примерно в 5 км от центра города Калининграда,
