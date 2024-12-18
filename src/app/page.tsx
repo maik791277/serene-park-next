@@ -1,101 +1,135 @@
+import {rooms} from "@/data/rooms";
 import Image from "next/image";
+import AdvantagesList from "@/components/advantagesList/advantagesList";
+import {advantages} from "@/data/advantages";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import UiLink from "@/components/ui/ui-link";
+const RoomList = dynamic(() => import("@/components/room-card/roomList"));
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main>
+      <section className="relative h-screen  w-full bg-hotel-hero-background bg-cover bg-center bg-no-repeat">
+        {/* Полупрозрачный оверлей с z-index ниже */}
+        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+        {/* Блок с текстом и кнопкой */}
+        <div className="container relative m-auto w-full h-full flex flex-col items-center justify-center z-10">
+          <div className="w-full flex flex-col items-center justify-center">
+            <p className="text-center text-[18px] tracking-[2px] pt-[10px] pb-[22px] text-white text-secondary uppercase box-border px-5 sm:text-[22px]">Россия,
+              г. Калининград, ул. Аллея Смелых 187</p>
+            <h1 className="text-center m-0 py-6 text-[40px] leading-[1.1] tracking-[1px] text-white font-semibold sm:text-7xl">
+              Гостиница <span className="whitespace-nowrap">"Парк Отель"</span>
+            </h1>
+            <div className="flex gap-5 max-w-[500px] w-full mt-[50px]  box-border px-5">
+              <UiLink href="/rooms" size="large">
+                Выбрать номер
+              </UiLink>
+              <UiLink href="/rooms" size="large" border={true}>
+                Выбрать номер
+              </UiLink>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+      <section className="second-block pt-32 pb-14">
+        <div className="container flex m-auto justify-center max-lg:flex-col max-lg:items-center ">
+          <div className="max-w-xl w-full mx-5">
+            <div className="mx-5">
+              <div
+                className="relative flex max-lg pb-[20px] max-sm:h-[500px] max-[500px]:h-[300px] max-[320px]:h-[200px]">
+                <div className="w-[60%] pr-[20px] max-sm:w-[50%]">
+                  <div className="relative w-full h-[440px] max-sm:h-full">
+                    <Image
+                      className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
+                      src="/images/2024-05-07_00-54-47.png"
+                      alt="Уютный номер отеля с обеденной зоной, длинным столом, белыми стульями, подвесными светильниками и окнами с видом на сад"
+                      fill={true}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                </div>
+                <div className="w-[40%] mt-[15%] max-sm:mt-0 max-sm:w-[50%]">
+                  <div className="relative w-full h-[260px] max-sm:h-full">
+                    <Image
+                      className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
+                      src="/images/A0105240-24E6-4955-8.png"
+                      alt="asd"
+                      fill={true}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="relative mt-[20px] pb-[100%] max-sm:hidden">
+                    <div className="absolute right-[50%] w-[150%] h-[215px]">
+                      <Image
+                        className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
+                        src="/images/2024-05-07_13-32-05.png"
+                        alt="asd"
+                        fill={true}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative w-full h-[300px] pt-[20px] sm:hidden max-[500px]:h-[200px]">
+                <Image
+                  className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
+                  src="/images/2024-05-07_13-32-05.png"
+                  alt="asd"
+                  fill
+                />
+              </div>
+            </div>
+          </div>
+          <div className=" w-full box-content xl:pl-24 lg:max-w-[550px]">
+            <div className="mx-5">
+              <h2 className="uppercase text-[40px] text-black leading-[1.23] font-semibold">"Парк Отель"</h2>
+              <p className="mt-[34px] text-black text-[20px] leading-[1.55] font-light">Городской отель «Парк Отель»
+                отличный выбор для тех, кто ищет уютное и комфортное проживание.
+                Наш отель расположен в новом здании спального района, примерно в 5 км от центра города Калининграда,
+                рядом с тихой лесной зоной. Вам ничего не помешает насладиться тишиной и отдохнуть от городской суеты.
+                При этом в шаговой доступности супермаркеты, кафе, фитнес-клуб, автобусные остановки. В уютных, светлых
+                двухместных номерах отеля есть всё необходимое для проживания: телевизор с плоским экраном и цифровыми
+                каналами,
+                холодильник, душ, фен и шкафом для одежды. А в номерах улучшенной категории в вашем распоряжение
+                кондиционер.
+                У каждого гостя будет доступ в интернет, вы сможете выложить фотографии, отправить файл или позвонить
+                родным по видео.
+                На территории гостиницы имеется бесплатная парковка. Стойка регистрации открыта круглосуточно.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-white">
+        <div className="container m-auto">
+          <div className="py-8 pl-[100px] max-w-[760px] max-sm:p-0">
+            <div className="mx-5">
+              <h2 className="uppercase text-[40px] text-black leading-[1.23] font-semibold">НАШИ НОМЕРА</h2>
+              <p className="pt-10 text-[26px] text-black leading-[1.45] font-light">Мы предлагаем 3 категории
+                номеров
+              </p>
+            </div>
+          </div>
+          <div className="max-5">
+            <Suspense fallback={<div>Loading...</div>}>
+              <RoomList rooms={rooms} />
+            </Suspense>
+          </div>
+          <p className="text-[20px] text-center text-black leading-[1.55] font-light mt-[120px] mx-5">Во всех номерах гостиницы к Вашим услугам спутниковое ТВ, Wi-Fi
+            (бесплатно), полный санузел, холодильник, электронные замки, шкаф для одежды,
+            мягкая мебель, рабочий стол. Возможно размещение третьего Гостя на дополнительном месте
+            (дополнительная одноместная кровать), услуга оплачивается отдельно.</p>
+        </div>
+      </section>
+      <section className="bg-white">
+        <div className="container m-auto">
+          <h2>ПРЕИМУЩЕСТВА</h2>
+          <AdvantagesList advantages={advantages}/>
+        </div>
+      </section>
+    </main>
   );
 }
+
