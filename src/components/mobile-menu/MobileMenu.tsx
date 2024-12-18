@@ -4,34 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import UiLink from "../ui/ui-link";
-import {useRouter} from "next/navigation";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isExiting, setIsExiting] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const router = useRouter();
-
-  const handleNavigation = (href: string) => {
-    setIsExiting(true); // Запускаем анимацию выхода
-    setTimeout(() => {
-      setIsExiting(false);
-      setIsMenuOpen(false); // Закрываем меню
-      document.body.classList.remove("no-scroll");
-      router.push(href); // Навигация после завершения анимации
-    }, 600); // Длительность анимации
-  };
 
   const toggleMenu = () => {
     if (isMenuOpen) {
-      setIsExiting(true);
       setIsButtonDisabled(true);
-      setTimeout(() => {
-        setIsExiting(false);
-        setIsMenuOpen(false);
-        setIsButtonDisabled(false);
-        document.body.classList.remove("no-scroll");
-      }, 600);
+      setIsMenuOpen(false);
+      setIsButtonDisabled(false);
+      document.body.classList.remove("no-scroll");
     } else {
       setIsMenuOpen(true);
       setIsButtonDisabled(true);
@@ -55,7 +38,7 @@ export default function MobileMenu() {
   ];
   return (
     <div className="lg:hidden bg-gray-50 text-white fixed top-0 w-full z-50 shadow-md">
-      <div className="flex justify-between items-center p-4 bg-custom-brown-ui-link">
+      <div className="flex justify-between items-center p-4 bg-myCustomColor">
         <div className="text-lg font-bold">
           <Link href="/public" className="text-[20px] font-light">
             𝒫𝒶𝓇𝓀 𝒪𝓉𝑒𝓁
@@ -87,7 +70,7 @@ export default function MobileMenu() {
       {isMenuOpen && (
         <div
           className={`absolute w-full bg-gray-50 h-screen ${
-            isExiting ? "animate-slide-up" : "animate-slide-down"
+            isMenuOpen ? "animate-slide-down" : "opacity-0"
           }`}
         >
           <div className={` flex flex-col items-center justify-evenly h-[80%]`}>
@@ -103,7 +86,7 @@ export default function MobileMenu() {
             <ul className="text-center text-sm py-4 space-y-3">
               {menuItems.map(item => (
                 <li key={item.href}>
-                  <Link href=""  onClick={() => handleNavigation(item.href)}
+                  <Link href={item.href} onClick={toggleMenu}
                         className="font-semibold tracking-[0.5px] text-[21px] text-black">
                     {item.label}
                   </Link>

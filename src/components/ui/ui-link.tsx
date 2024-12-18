@@ -28,7 +28,7 @@ const UiLink: React.FC<LinkProps> = ({ size = 'medium', color = 'white', childre
     : '';
 
   const baseClasses =
-    'w-full transition-colors-opacity transition-colors max-w-60 bg-custom-brown-ui-link rounded flex items-center justify-center text-center hover:opacity-30';
+    'w-full transition-colors-opacity transition-colors max-w-60 bg-myCustomColor rounded flex items-center justify-center text-center hover:opacity-30';
 
   const combinedClasses = `${baseClasses} ${borderClasses} ${sizeClasses[size]} ${colorClasses[color]}`;
 
