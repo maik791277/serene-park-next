@@ -1,11 +1,20 @@
 import {rooms} from "@/data/rooms";
+import {reviewsData} from "@/data/reviews"
 import Image from "next/image";
 import AdvantagesList from "@/components/advantagesList/advantagesList";
 import {advantages} from "@/data/advantages";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import UiLink from "@/components/ui/ui-link";
+import Reviews from "@/components/reviews/reviews";
+import {Metadata} from "next";
 const RoomList = dynamic(() => import("@/components/room-card/roomList"));
+
+export const metadata: Metadata = {
+  title: "Добро пожаловать в Парк Отель",
+  description: "Откройте для себя уют и комфорт в наших номерах. Отличное расположение и современные удобства.",
+  keywords: "гостиница, номера, отдых, комфорт, Калининград",
+};
 
 export default function Home() {
   return (
@@ -16,9 +25,11 @@ export default function Home() {
         {/* Блок с текстом и кнопкой */}
         <div className="container relative m-auto w-full h-full flex flex-col items-center justify-center z-10">
           <div className="w-full flex flex-col items-center justify-center">
-            <p className="text-center text-[18px] tracking-[2px] pt-[10px] pb-[22px] text-white text-secondary uppercase box-border px-5 sm:text-[22px]">Россия,
+            <p
+              className="text-center text-[18px] tracking-[2px] pt-[10px] pb-[22px] text-white text-secondary uppercase box-border px-5 sm:text-[22px]">Россия,
               г. Калининград, ул. Аллея Смелых 187</p>
-            <h1 className="text-center m-0 py-6 text-[40px] leading-[1.1] tracking-[1px] text-white font-semibold sm:text-7xl">
+            <h1
+              className="text-center m-0 py-6 text-[40px] leading-[1.1] tracking-[1px] text-white font-semibold sm:text-7xl">
               Гостиница <span className="whitespace-nowrap">&quot;Парк Отель&quot;</span>
             </h1>
             <div className="flex gap-5 max-w-[500px] w-full mt-[50px]  box-border px-5">
@@ -82,7 +93,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className=" w-full box-content xl:pl-24 lg:max-w-[550px]">
+          <div className="w-full box-content xl:pl-24 lg:max-w-[550px]">
             <div className="mx-5">
               <h2 className="uppercase text-[40px] text-black leading-[1.23] font-semibold">&quot;Парк Отель&quot;</h2>
               <p className="mt-[34px] text-black text-[20px] leading-[1.55] font-light">Городской отель «Парк Отель»
@@ -103,7 +114,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-white">
-        <div className="container m-auto">
+        <div className="container max-w-7xl m-auto">
           <div className="py-8 pl-[100px] max-w-[760px] max-sm:p-0">
             <div className="mx-5">
               <h2 className="uppercase text-[40px] text-black leading-[1.23] font-semibold">НАШИ НОМЕРА</h2>
@@ -114,19 +125,64 @@ export default function Home() {
           </div>
           <div className="max-5">
             <Suspense fallback={<div>Loading...</div>}>
-              <RoomList rooms={rooms} />
+              <RoomList rooms={rooms}/>
             </Suspense>
           </div>
-          <p className="text-[20px] text-center text-black leading-[1.55] font-light mt-[120px] mx-5">Во всех номерах гостиницы к Вашим услугам спутниковое ТВ, Wi-Fi
+          <p className="text-[20px] text-center text-black leading-[1.55] font-light mt-[120px] mx-5">Во всех номерах
+            гостиницы к Вашим услугам спутниковое ТВ, Wi-Fi
             (бесплатно), полный санузел, холодильник, электронные замки, шкаф для одежды,
             мягкая мебель, рабочий стол. Возможно размещение третьего Гостя на дополнительном месте
             (дополнительная одноместная кровать), услуга оплачивается отдельно.</p>
         </div>
       </section>
-      <section className="bg-white">
-        <div className="container m-auto">
-          <h2>ПРЕИМУЩЕСТВА</h2>
+      <section className="bg-white mt-[100px]">
+        <div className="container max-w-7xl m-auto">
+          <div className="py-8 pl-[100px] max-w-[760px] max-sm:p-0">
+            <h2 className="uppercase text-[40px] text-black leading-[1.23] font-semibold">ПРЕИМУЩЕСТВА</h2>
+          </div>
           <AdvantagesList advantages={advantages}/>
+        </div>
+      </section>
+      <section className="bg-gray-100 py-12 mt-[100px]">
+        <div className="container mx-auto px-6 md:px-12 lg:px-20">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+            Местоположение
+          </h2>
+          <p className="text-center text-[18px] text-gray-600 mb-8">
+            Мы находимся в удобном месте, легко доступном для гостей. Ознакомьтесь с картой ниже, чтобы найти нас.
+          </p>
+          <div className="overflow-hidden rounded-lg shadow-lg">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=131144376859"
+              width="100%"
+              height="600"
+              frameBorder="0"
+              className="w-full h-[400px] md:h-[600px]"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section className="bg-gray-50 py-16 min-h-[200px] flex items-stretch">
+        <div className="container mx-auto px-6 md:px-12 flex gap-12 max-lg:flex-col">
+          <div className="flex flex-col justify-between w-1/3 h-auto lg:h-full top-16 bg-gradient-to-br from-gray-800 to-gray-900 text-white shadow-xl p-6 rounded-lg max-lg:w-full">
+            <div>
+              <h2 className="text-3xl font-extrabold mb-6">Отзывы</h2>
+              <p className="text-gray-300 text-lg">
+                Здесь собраны отзывы наших клиентов. Нажмите на имя клиента, чтобы перейти в
+                его профиль и проверить подлинность отзыва.
+              </p>
+            </div>
+            <div>
+              <hr className="border-t border-gray-600 my-6"/>
+              <p className="text-gray-400 text-sm">
+                *Отзывы проверяются модераторами перед публикацией.
+              </p>
+            </div>
+          </div>
+          <div className="w-2/3 max-h-[500px] overflow-y-auto space-y-6 pl-8 custom-scrollbar rounded-lg shadow-lg p-6 bg-gray-500  max-lg:w-full">
+            <Reviews reviews={reviewsData}/>
+          </div>
         </div>
       </section>
     </main>
