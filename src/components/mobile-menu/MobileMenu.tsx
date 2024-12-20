@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import UiLink from "../ui/ui-link";
+import {NavItemsLink} from "@/data/nav-items";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,17 +26,29 @@ export default function MobileMenu() {
     }
   };
 
-  const menuItems = [
-    { href: "/", label: "Главная" },
-    { href: "/rooms", label: "Номера" },
-    { href: "#about", label: "Об отеле" },
-    { href: "#benefits", label: "Преимущества" },
-    { href: "#location", label: "Местоположение" },
-    { href: "#reviews", label: "Отзывы" },
-    { href: "#photos", label: "Фото" },
-    { href: "#contacts", label: "Контакты" },
-    { href: "#payment", label: "Оплата" },
-  ];
+  type menuItemsProps = {
+    id: number,
+    label: string,
+    href: string,
+  }
+
+  const Navigation = ({menuItems}: {menuItems:menuItemsProps[] } ) => {
+    return (
+      <nav>
+        <ul className="text-center text-sm py-4 space-y-3">
+          {menuItems.map(item => (
+            <li key={item.id}>
+              <Link href={item.href} onClick={toggleMenu}
+                    className="font-semibold tracking-[0.5px] text-[21px] text-black">
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )
+  }
+
   return (
     <div className="lg:hidden bg-gray-50 text-white fixed top-0 w-full z-50 shadow-md">
       <div className="flex justify-between items-center p-4 bg-myCustomColor">
@@ -83,16 +96,7 @@ export default function MobileMenu() {
                 className="object-contain h-full w-full"
               />
             </div>
-            <ul className="text-center text-sm py-4 space-y-3">
-              {menuItems.map(item => (
-                <li key={item.href}>
-                  <Link href={item.href} onClick={toggleMenu}
-                        className="font-semibold tracking-[0.5px] text-[21px] text-black">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <Navigation menuItems={NavItemsLink}/>
             <div
               className="text-center md:text-left text-sm text-gray-600 flex flex-col gap-3 justify-center items-center max-w-[400px] w-full">
               <address className="text-sm text-gray-600 mx-auto text-center md:text-left">

@@ -1,39 +1,21 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function InteractiveHeader({ children }: { children: React.ReactNode }) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isClient, setIsClient] = useState(false);
-
-  // Проверяем, что мы на клиенте, перед тем как использовать window
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsClient(true); // Устанавливаем флаг, если находимся на клиенте
-    }
-  }, []);
 
   useEffect(() => {
-    if (!isClient) return; // Не запускаем обработчик, если не на клиенте
-
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      setIsVisible(currentScrollY <= lastScrollY);
+      setIsVisible(currentScrollY <= lastScrollY || currentScrollY < 50);
       setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY, isClient]);
-
-  if (!isClient) {
-    return null; // Не рендерим компонент на сервере
-  }
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <div
@@ -45,5 +27,6 @@ export default function InteractiveHeader({ children }: { children: React.ReactN
     </div>
   );
 }
+
 
 

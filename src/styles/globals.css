@@ -21,15 +21,6 @@ body {
   font-family: var(--font-primary), serif;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background-color: #ffffff; /* Белый фон */
-  color: #000000; /* Чёрный текст */
-}
-
 body {
   position: relative;
   min-height: 100vh;
@@ -47,6 +38,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6; /* Фон трека */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #10b981; /* Цвет ползунка */
+  border-radius: 4px; /* Скругление */
+  border: 2px solid #f3f4f6; /* Отступ */
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #ac9595 #f3f4f6;
 }
 
 @layer utilities {
@@ -68,38 +78,5 @@ body {
   }
 
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background-color: #ffffff; /* Белый фон */
-  color: #000000; /* Чёрный текст */
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background-color: #ffffff; /* Белый фон */
-  color: #000000; /* Чёрный текст */
-}html, body {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-   overflow-x: hidden;
-   background-color: #ffffff; /* Белый фон */
-   color: #000000; /* Чёрный текст */
- }
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  background-color: #ffffff; /* Белый фон */
-  color: #000000; /* Чёрный текст */
-}
-
-
 
 
