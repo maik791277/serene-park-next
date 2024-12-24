@@ -1,7 +1,7 @@
 export const rooms = [
   {
     id: 1,
-    title: '"Стандарт TWIN"',
+    title: 'Стандарт TWIN',
     features: [
       'На 1-2 человека',
       '20 кв.м.',
@@ -14,13 +14,14 @@ export const rooms = [
     ],
     price: '4 500 руб.',
     images: [
-      '/images/photo_2024-05-31_13-.jpg',
-      '/images/8.jpg',
+      '/images/TW1.webp',
+      '/images/TW2.webp',
+      '/images/TW3.webp',
     ],
   },
   {
     id: 2,
-    title: '"Стандарт DOUBLE"',
+    title: 'Стандарт DOUBLE',
     features: [
       'На 1-2 человека',
       '20 кв.м.',
@@ -33,13 +34,15 @@ export const rooms = [
     ],
     price: '4 500 руб.',
     images: [
-      '/images/photo_2024-09-28_22-.jpg',
-      '/images/photo_2024-09-29_14-.jpg',
-    ],
+      '/images/DBL1.webp',
+      '/images/DBL2.webp',
+      '/images/DBL3.webp',
+      '/images/DBL4.webp',
+    ]
   },
   {
     id: 3,
-    title: '"Стандарт DOUBLE улучшенный"',
+    title: 'Стандарт DOUBLE IMPROVED',
     features: [
       'На 1-2 человека',
       '40 кв.м.',
@@ -54,12 +57,10 @@ export const rooms = [
     ],
     price: '5 500 руб.',
     images: [
-      '/images/4701884.jpg',
-      '/images/2024-05-07_00-55-18.png',
-      '/images/2024-05-07_13-33-43.png',
-      '/images/6.jpg',
-      '/images/photo_2024-05-31_13.jpg',
-      '/images/photo_2024-05-31_13-sddsd.jpg',
+      '/images/improved1.webp',
+      '/images/improved2.webp',
+      '/images/improved3.webp',
+      '/images/improved4.webp',
     ],
   },
 ];
