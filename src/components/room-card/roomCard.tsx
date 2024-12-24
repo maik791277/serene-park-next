@@ -23,7 +23,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ title, features, price, images }) =
       {/* Левая часть - информация о номере */}
       <div className="room-card p-6 flex-1 border border-myCustomColor rounded-[15px] rounded-br-[0px] lg:rounded-tr-[0px] lg:border-r-0 max-lg:rounded-bl-[0px] max-lg:border-b-0  ">
         <h3 className="text-[40px] text-black font-normal mb-4 text-center lg:text-left">
-          Номер <span className="block">{title}</span>
+          Номер <span className="block">&quot;{title}&quot;</span>
         </h3>
         <ul className="mb-6 text-gray-600">
           {features.map((feature, index) => {

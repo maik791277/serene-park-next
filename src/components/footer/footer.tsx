@@ -101,11 +101,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="text-center md:text-left">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.svg"
               alt="Парк Отель"
               width={120}
               height={100}
-              className="mx-auto md:mx-0"
+              className="mx-auto"
             />
             <p className="mt-6 text-gray-400 text-sm">
               &copy; {new Date().getFullYear()} Парк Отель. Все права защищены.

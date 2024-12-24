@@ -53,7 +53,7 @@ export default function Home() {
                   <div className="relative w-full h-[440px] max-sm:h-full">
                     <Image
                       className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                      src="/images/2024-05-07_00-54-47.png"
+                      src="/images/AUS3.webp"
                       alt="Уютный номер отеля с обеденной зоной, длинным столом, белыми стульями, подвесными светильниками и окнами с видом на сад"
                       fill={true}
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -64,7 +64,7 @@ export default function Home() {
                   <div className="relative w-full h-[260px] max-sm:h-full">
                     <Image
                       className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                      src="/images/A0105240-24E6-4955-8.png"
+                      src="/images/AUS1.webp"
                       alt="asd"
                       fill={true}
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -74,7 +74,7 @@ export default function Home() {
                     <div className="absolute right-[50%] w-[150%] h-[215px]">
                       <Image
                         className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                        src="/images/2024-05-07_13-32-05.png"
+                        src="/images/AUS2.webp"
                         alt="asd"
                         fill={true}
                         sizes="(max-width: 768px) 100vw, 50vw"

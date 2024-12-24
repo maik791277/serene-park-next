@@ -72,7 +72,7 @@ export default function Header() {
                   </div>
                 </div>
                 <div className="h-20 w-24">
-                  <Image src="/images/logo.png" width={80} height={100} alt="Логотип Парк Отель"
+                  <Image src="/images/logo.svg" width={80} height={100} alt="Логотип Парк Отель"
                          className="object-contain h-full w-full"/>
                 </div>
                 <div
