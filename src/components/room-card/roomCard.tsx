@@ -69,7 +69,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ title, features, price, images }) =
           {images.map((image, index) => (
             <SwiperSlide
                 key={index}
-                className="relative h-full w-full min-h-[300px] lg:min-h-[500px] bg-cover bg-center">
+                className="relative h-full w-full min-h-[400px] lg:min-h-[500px] bg-cover bg-center">
               <Image
                 src={image}
                 className="h-full w-full object-cover"
