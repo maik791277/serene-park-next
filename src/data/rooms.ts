@@ -42,7 +42,7 @@ export const rooms = [
   },
   {
     id: 3,
-    title: 'Стандарт DOUBLE IMPROVED',
+    title: 'Стандарт DOUBLE улучшенный',
     features: [
       'На 1-2 человека',
       '40 кв.м.',
