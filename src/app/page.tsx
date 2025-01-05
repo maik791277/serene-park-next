@@ -156,9 +156,7 @@ export default function Home() {
               src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=131144376859"
               width="100%"
               height="600"
-              frameBorder="0"
               className="w-full h-[400px] md:h-[600px]"
-              loading="lazy"
             ></iframe>
           </div>
         </div>
