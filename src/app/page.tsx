@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <section className="relative h-screen  w-full bg-hotel-hero-background bg-cover bg-center bg-no-repeat">
         {/* Полупрозрачный оверлей с z-index ниже */}
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
@@ -183,7 +183,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
