@@ -52,7 +52,7 @@ export default function Page() {
             </p>
 
             <ReCAPTCHA
-              sitekey="6LdsFq8qAAAAAMt8WqMlyGG27sDs81GwBn8bYPA4"
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
               onChange={handleCaptcha}
             />
 
