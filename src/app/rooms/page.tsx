@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import HotelWidget from "@/components/hotel-widget/hotelWidget";
 
@@ -8,18 +8,36 @@ export default function Page() {
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Проверка состояния капчи при загрузке страницы
+  useEffect(() => {
+    const checkCaptcha = async () => {
+      try {
+        const response = await fetch("/api/check-captcha", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+        const data = await response.json();
+        setCaptchaVerified(data.verified);
+      } catch (error) {
+        console.error("Ошибка проверки состояния капчи:", error);
+      }
+    };
+
+    checkCaptcha();
+  }, []);
+
+  // Обработка успешной проверки капчи
   const handleCaptcha = async (token: string | null) => {
     if (!token) {
       setCaptchaVerified(false);
+      setErrorMessage("Токен капчи отсутствует.");
       return;
     }
 
     try {
       const response = await fetch("/api/verify-recaptcha", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),
       });
 
@@ -27,12 +45,13 @@ export default function Page() {
 
       if (data.success) {
         setCaptchaVerified(true);
+        setErrorMessage("");
       } else {
-        setErrorMessage(data.message || "Проверка reCAPTCHA не удалась.");
         setCaptchaVerified(false);
+        setErrorMessage(data.message || "Проверка reCAPTCHA не удалась.");
       }
     } catch (error) {
-      console.error("Ошибка проверки:", error);
+      console.error("Ошибка при проверке капчи:", error);
       setErrorMessage("Произошла ошибка при проверке.");
       setCaptchaVerified(false);
     }
@@ -52,7 +71,7 @@ export default function Page() {
             </p>
 
             <ReCAPTCHA
-              sitekey="6LdsFq8qAAAAAMt8WqMlyGG27sDs81GwBn8bYPA4"
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
               onChange={handleCaptcha}
             />
 
@@ -81,7 +100,7 @@ export default function Page() {
         </div>
       )}
 
-      {captchaVerified ? <HotelWidget /> : null}
+      {captchaVerified && <HotelWidget />}
     </div>
   );
 }
