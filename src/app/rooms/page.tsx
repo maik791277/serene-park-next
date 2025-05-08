@@ -39,7 +39,7 @@ export default function Page() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col mt-[200px] md:mt-[157px]">
       {!captchaVerified && (
         <div className="flex-grow w-full flex items-center justify-center bg-gradient-to-br from-gray-600 via-gray-800 to-gray-900 text-white py-20">
           <div className="max-w-[600px] w-full min-h-[400px] h-full bg-white rounded-xl shadow-[0_0_20px_8px_rgba(255,255,255,0.3)] flex flex-col items-center justify-center p-8 mx-5 space-y-6">
