@@ -1,13 +1,13 @@
-import {rooms} from "@/data/rooms";
-import {reviewsData} from "@/data/reviews"
-import Image from "next/image";
 import AdvantagesList from "@/components/advantagesList/advantagesList";
-import {advantages} from "@/data/advantages";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import UiLink from "@/components/ui/ui-link";
 import Reviews from "@/components/reviews/reviews";
-import {Metadata} from "next";
+import UiLink from "@/components/ui/ui-link";
+import { advantages } from "@/data/advantages";
+import { reviewsData } from "@/data/reviews";
+import { rooms } from "@/data/rooms";
+import { Metadata } from "next";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import { Suspense } from "react";
 const RoomList = dynamic(() => import("@/components/room-card/roomList"));
 
 export const metadata: Metadata = {
@@ -165,17 +165,25 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12 flex gap-12 max-lg:flex-col">
           <div className="flex flex-col justify-between w-1/3 h-auto lg:h-full top-16 bg-gradient-to-br from-gray-800 to-gray-900 text-white shadow-xl p-6 rounded-lg max-lg:w-full">
             <div>
-              <h2 className="text-3xl font-extrabold mb-6">Отзывы</h2>
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-3xl font-extrabold">Отзывы</h2>
+                {/* eslint-disable-next-line @next/next/no-iframe-without-sandbox */}
+                <iframe 
+                  src="https://yandex.ru/sprav/widget/rating-badge/131144376859?type=award" 
+                  width="150" 
+                  height="50" 
+                  frameBorder="0"
+                  className="bg-white rounded-lg"
+                  title="Рейтинг Яндекс"
+                />
+              </div>
               <p className="text-gray-300 text-lg">
-                Здесь собраны отзывы наших клиентов. Нажмите на имя клиента, чтобы перейти в
-                его профиль и проверить подлинность отзыва.
+                Здесь собраны отзывы наших клиентов. Нажмите на имя клиента, чтобы перейти в его профиль и проверить подлинность отзыва.
               </p>
             </div>
             <div>
               <hr className="border-t border-gray-600 my-6"/>
-              <p className="text-gray-400 text-sm">
-                *Отзывы проверяются модераторами перед публикацией.
-              </p>
+              <p className="text-gray-400 text-sm">*Отзывы проверяются модераторами перед публикацией.</p>
             </div>
           </div>
           <div className="w-2/3 max-h-[500px] overflow-y-auto space-y-6 pl-8 custom-scrollbar rounded-lg shadow-lg p-6 bg-gray-500  max-lg:w-full">
