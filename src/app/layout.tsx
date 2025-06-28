@@ -1,10 +1,11 @@
-import React from "react";
 import type { Metadata } from "next";
 import { Cormorant } from "next/font/google";
+import React from "react";
 
-import "@/styles/globals.css";
-import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header";
+import YandexMetrika from "@/components/YandexMetrika";
+import "@/styles/globals.css";
 
 
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru">
     <body className={`flex flex-col min-h-screen ${cormorant.className}`}>
+    <YandexMetrika />
     <Header/>
     <main className="flex-grow">{children}</main>
     <Footer/>
