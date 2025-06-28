@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { NavItemsLink } from "@/data/nav-items";
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import UiLink from "../ui/ui-link";
-import {NavItemsLink} from "@/data/nav-items";
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +53,7 @@ export default function MobileMenu() {
     <div className="lg:hidden bg-gray-50 text-white fixed top-0 w-full z-50 shadow-md">
       <div className="flex justify-between items-center p-4 bg-myCustomColor">
         <div className="text-lg font-bold">
-          <Link href="/public" className="text-[20px] font-light">
+          <Link href="/" className="text-[20px] font-light">
             𝒫𝒶𝓇𝓀 𝒪𝓉𝑒𝓁
           </Link>
         </div>
