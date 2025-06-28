@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Cormorant } from "next/font/google";
+import Script from 'next/script';
 import React from "react";
 
 import Footer from "@/components/footer/footer";
 import Header from "@/components/header/header";
-import YandexMetrika from "@/components/YandexMetrika";
 import "@/styles/globals.css";
 
 
@@ -49,12 +49,41 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
-    <body className={`flex flex-col min-h-screen ${cormorant.className}`}>
-    <YandexMetrika />
-    <Header/>
-    <main className="flex-grow">{children}</main>
-    <Footer/>
-    </body>
+      <head>
+        <Script
+          id="yandex-metrika"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+              m[i].l=1*new Date();
+              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+              (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+              ym(103109042, "init", {
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true,
+                  webvisor:true
+              });
+            `,
+          }}
+        />
+        <noscript>
+          <div>
+            <img 
+              src="https://mc.yandex.ru/watch/103109042" 
+              style={{ position: 'absolute', left: '-9999px' }} 
+              alt="" 
+            />
+          </div>
+        </noscript>
+      </head>
+      <body className={`flex flex-col min-h-screen ${cormorant.className}`}>
+        <Header/>
+        <main className="flex-grow">{children}</main>
+        <Footer/>
+      </body>
     </html>
   );
 }
