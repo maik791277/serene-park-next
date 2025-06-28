@@ -12,7 +12,7 @@ export const rooms = [
       'Душевая кабина',
       'Качественный Wi-Fi',
     ],
-    price: '4 500 руб.',
+    price: '6 000 руб.',
     images: [
       '/images/TW1.webp',
       '/images/TW2.webp',
@@ -32,7 +32,7 @@ export const rooms = [
       'Душевая кабина',
       'Качественный Wi-Fi',
     ],
-    price: '4 500 руб.',
+    price: '6 000 руб.',
     images: [
       '/images/DBL1.webp',
       '/images/DBL2.webp',
@@ -55,7 +55,7 @@ export const rooms = [
       'Душевая кабина',
       'Качественный Wi-Fi',
     ],
-    price: '5 500 руб.',
+    price: '7 500 руб.',
     images: [
       '/images/improved1.webp',
       '/images/improved2.webp',
