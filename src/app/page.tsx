@@ -167,7 +167,6 @@ export default function Home() {
             <div>
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-3xl font-extrabold">Отзывы</h2>
-                {/* eslint-disable-next-line @next/next/no-iframe-without-sandbox */}
                 <iframe 
                   src="https://yandex.ru/sprav/widget/rating-badge/131144376859?type=award" 
                   width="150" 
@@ -175,6 +174,7 @@ export default function Home() {
                   frameBorder="0"
                   className="bg-white rounded-lg"
                   title="Рейтинг Яндекс"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
                 />
               </div>
               <p className="text-gray-300 text-lg">
