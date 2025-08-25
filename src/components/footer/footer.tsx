@@ -1,6 +1,6 @@
+import { LegalLinks, NavItemsLink } from "@/data/nav-items";
 import Image from "next/image";
 import Link from "next/link";
-import { NavItemsLink } from "@/data/nav-items";
 
 type MenuItemProps = {
   id: number;
@@ -56,6 +56,24 @@ const ContactInfo = () => (
   </div>
 );
 
+const LegalDocuments = () => (
+  <div>
+    <h3 className="text-xl font-semibold text-white mb-6">Правовая информация</h3>
+    <ul className="space-y-3">
+      {LegalLinks.map((item) => (
+        <li key={item.id}>
+          <Link
+            href={item.href}
+            className="text-gray-300 hover:text-white transition-all duration-300 text-sm block"
+          >
+            {item.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 const SocialLinks = () => (
   <div>
     <h3 className="text-xl font-semibold text-white mb-6">Социальные сети</h3>
@@ -98,7 +116,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white py-16">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="text-center md:text-left">
             <Image
               src="/images/logo.svg"
@@ -113,6 +131,7 @@ const Footer = () => {
           </div>
           <Navigation menuItems={NavItemsLink} />
           <ContactInfo />
+          <LegalDocuments />
           <SocialLinks />
         </div>
       </div>

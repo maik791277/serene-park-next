@@ -9,3 +9,9 @@ export const NavItemsLink = [
   {id: 8, label: "Контакты", href: "#контакты" },
   {id: 9, label: "Оплата", href: "#оплата" },
 ];
+
+export const LegalLinks = [
+  {id: 1, label: "Политика конфиденциальности", href: "/legal/privacy-policy" },
+  {id: 2, label: "Правила предоставления услуг", href: "/legal/terms-of-service" },
+  {id: 3, label: "Согласие на обработку персональных данных", href: "/legal/personal-data-consent" },
+];
