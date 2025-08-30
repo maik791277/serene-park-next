@@ -14,4 +14,5 @@ export const LegalLinks = [
   {id: 1, label: "Политика конфиденциальности", href: "/legal/privacy-policy" },
   {id: 2, label: "Правила предоставления услуг", href: "/legal/terms-of-service" },
   {id: 3, label: "Согласие на обработку персональных данных", href: "/legal/personal-data-consent" },
+  {id: 4, label: "Реквизиты", href: "/legal/requisites" },
 ];
