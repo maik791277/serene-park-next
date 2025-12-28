@@ -86,7 +86,7 @@ export default function Home() {
               <div className="relative w-full h-[300px] pt-[20px] sm:hidden max-[500px]:h-[200px]">
                 <Image
                   className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                  src="/images/2024-05-07_13-32-05.png"
+                  src="/images/improved3.webp"
                   alt="asd"
                   fill
                 />
