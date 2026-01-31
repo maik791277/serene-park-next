@@ -14,9 +14,12 @@ export const rooms = [
     ],
     price: '6 000 руб.',
     images: [
-      '/images/TW1.webp',
-      '/images/TW2.webp',
-      '/images/TW3.webp',
+      '/images/standard-twin/standard-twin1.jpg',
+      '/images/standard-twin/standard-twin2.jpg',
+      '/images/standard-twin/standard-twin3.jpg',
+      '/images/toilet/toilet1.jpg',
+      '/images/toilet/toilet2.jpg',
+      '/images/toilet/toilet3.jpg',
     ],
   },
   {
@@ -34,10 +37,13 @@ export const rooms = [
     ],
     price: '6 000 руб.',
     images: [
-      '/images/DBL1.webp',
-      '/images/DBL2.webp',
-      '/images/DBL3.webp',
-      '/images/DBL4.webp',
+      '/images/sandard-double/sandard-double1.jpg',
+      '/images/sandard-double/sandard-double2.jpg',
+      '/images/sandard-double/sandard-double3.jpg',
+      '/images/sandard-double/sandard-double4.jpg',
+      '/images/toilet/toilet1.jpg',
+      '/images/toilet/toilet2.jpg',
+      '/images/toilet/toilet3.jpg',
     ]
   },
   {
@@ -57,10 +63,13 @@ export const rooms = [
     ],
     price: '7 500 руб.',
     images: [
-      '/images/improved1.webp',
-      '/images/improved2.webp',
-      '/images/improved3.webp',
-      '/images/improved4.webp',
+      '/images/improved-standard/improved-standard1.jpg',
+      '/images/improved-standard/improved-standard3.jpg',
+      '/images/improved-standard/improved-standard4.jpg',
+      '/images/improved-standard/improved-standard5.jpg',
+      '/images/improved-standard/improved-standard2.jpg',
+      '/images/improved-standard/improved-standard6.jpg',
+      '/images/improved-standard/improved-standard7.jpg',
     ],
   },
 ];
