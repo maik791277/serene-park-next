@@ -19,20 +19,30 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
-      <section className="relative h-screen  w-full bg-hotel-hero-background bg-cover bg-center bg-no-repeat">
-        {/* Полупрозрачный оверлей с z-index ниже */}
-        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-        {/* Блок с текстом и кнопкой */}
+      <section className="relative h-screen w-full overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
+          <source src="/videos/hero.webm" type="video/webm" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-black/20" />
+
         <div className="container relative m-auto w-full h-full flex flex-col items-center justify-center z-10">
           <div className="w-full flex flex-col items-center justify-center">
-            <p
-              className="text-center text-[18px] tracking-[2px] pt-[10px] pb-[22px] text-white text-secondary uppercase box-border px-5 sm:text-[22px]">Россия,
-              г. Калининград, ул. Аллея Смелых 187</p>
-            <h1
-              className="text-center m-0 py-6 text-[40px] leading-[1.1] tracking-[1px] text-white font-semibold sm:text-7xl">
+            <p className="text-center text-[18px] tracking-[2px] pt-[10px] pb-[22px] text-white uppercase box-border px-5 sm:text-[22px]">
+              Россия, г. Калининград, ул. Аллея Смелых 187
+            </p>
+            <h1 className="text-center m-0 py-6 text-[40px] leading-[1.1] tracking-[1px] text-white font-semibold sm:text-7xl">
               Гостиница <span className="whitespace-nowrap">&quot;Парк Отель&quot;</span>
             </h1>
-            <div className="flex gap-5 max-w-[500px] w-full mt-[50px]  box-border px-5">
+            <div className="flex gap-5 max-w-[500px] w-full mt-[50px] box-border px-5">
               <UiLink href="/rooms" size="large">
                 Выбрать номер
               </UiLink>
