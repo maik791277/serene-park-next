@@ -57,41 +57,14 @@ export default function Home() {
         <div className="container flex m-auto justify-center max-lg:flex-col max-lg:items-center ">
           <div className="max-w-xl w-full mx-5">
             <div className="mx-5">
-              <div
-                className="relative flex max-lg pb-[20px] max-sm:h-[500px] max-[500px]:h-[300px] max-[320px]:h-[200px]">
-                <div className="w-[60%] pr-[20px] max-sm:w-[50%]">
-                  <div className="relative w-full h-[440px] max-sm:h-full">
-                    <Image
-                      className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                      src="/images/AUS3.webp"
-                      alt="Уютный номер отеля с обеденной зоной, длинным столом, белыми стульями, подвесными светильниками и окнами с видом на сад"
-                      fill={true}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                </div>
-                <div className="w-[40%] mt-[15%] max-sm:mt-0 max-sm:w-[50%]">
-                  <div className="relative w-full h-[260px] max-sm:h-full">
-                    <Image
-                      className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                      src="/images/AUS1.webp"
-                      alt="asd"
-                      fill={true}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="relative mt-[20px] pb-[100%] max-sm:hidden">
-                    <div className="absolute right-[50%] w-[150%] h-[215px]">
-                      <Image
-                        className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                        src="/images/AUS2.webp"
-                        alt="asd"
-                        fill={true}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                    </div>
-                  </div>
-                </div>
+              <div className="relative w-full h-[500px] max-sm:h-[400px] max-[500px]:h-[300px] max-[320px]:h-[200px]">
+                <Image
+                  className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 object-cover"
+                  src="/images/photo_2026-02-22_10-43-58.jpg"
+                  alt="Уютный номер отеля с обеденной зоной, длинным столом, белыми стульями, подвесными светильниками и окнами с видом на сад"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
               <div className="relative w-full h-[300px] pt-[20px] sm:hidden max-[500px]:h-[200px]">
                 <Image
