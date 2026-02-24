@@ -55,7 +55,7 @@ export default function Home() {
       </section>
       <section className="second-block pt-32 pb-14">
         <div className="container flex m-auto justify-center max-lg:flex-col max-lg:items-center ">
-          <div className="max-w-xl w-full mx-5">
+          <div className="max-w-xl w-full mx-5 pb-[20px]">
             <div className="mx-5">
               <div className="relative w-full h-[500px] max-sm:h-[400px] max-[500px]:h-[300px] max-[320px]:h-[200px]">
                 <Image
@@ -64,14 +64,6 @@ export default function Home() {
                   alt="Уютный номер отеля с обеденной зоной, длинным столом, белыми стульями, подвесными светильниками и окнами с видом на сад"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="relative w-full h-[300px] pt-[20px] sm:hidden max-[500px]:h-[200px]">
-                <Image
-                  className="rounded-lg shadow-[0px_4px_10px_rgba(0,0,0,0.1)] transition-transform duration-300 hover:scale-105 border-gray-300 object-cover"
-                  src="/images/improved3.webp"
-                  alt="asd"
-                  fill
                 />
               </div>
             </div>
